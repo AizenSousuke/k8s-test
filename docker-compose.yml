@@ -1,0 +1,7 @@
+services:
+  k8s-test:
+    container_name: k8s-test
+    image: k8s-test
+    build: .
+    ports:
+      - "8080:8080"

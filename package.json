@@ -1,0 +1,14 @@
+{
+    "name": "k8s-test",
+    "description": "Just a sample k8s container for testing",
+    "authors": "Aizen Sousuke",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js"
+    },
+    "dependencies": {
+        "express": "5.1.0"
+    },
+    "devDependencies": {}
+}
