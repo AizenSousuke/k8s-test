@@ -5,7 +5,7 @@ metadata:
   labels:
     app: k8s-test
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: k8s-test
@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: k8s-test
-        image: k8s-test:latest
+        image: k8s-test:1.0.0
         ports:  
         - containerPort: 8080
