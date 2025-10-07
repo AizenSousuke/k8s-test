@@ -5,7 +5,7 @@ metadata:
     labels:
         app: k8s-test
 spec:
-    replicas: 3
+    replicas: 2
     selector:
         matchLabels:
             app: k8s-test
@@ -26,3 +26,18 @@ spec:
                           cpu: "500m"
                   ports:
                       - containerPort: 8080
+                - name: crashy
+                  image: busybox
+                  resources:
+                      requests:
+                          memory: "64Mi"
+                          cpu: "250m"
+                      limits:
+                          memory: "128Mi"
+                          cpu: "500m"
+                  command:
+                      [
+                          "sh",
+                          "-c",
+                          "echo 'Simulating crash...'; sleep 5; exit 1",
+                      ]
